@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4436494040201295678}
+  - component: {fileID: 7862701897586021640}
   - component: {fileID: 3805892186606954751}
   - component: {fileID: 7892968322842795982}
   - component: {fileID: 7038025952267043030}
   - component: {fileID: 3839578496210338396}
   - component: {fileID: 4023334027151554175}
   - component: {fileID: 7095928004088355633}
-  - component: {fileID: -6811591968530432594}
   m_Layer: 0
   m_Name: HeroKnight_Green
   m_TagString: Player
@@ -42,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7862701897586021640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202566833572084585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696bad16fcc39fc47a3cbd8105de86fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3805892186606954751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +105,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -193,18 +207,6 @@ MonoBehaviour:
   m_newColors:
   - {r: 0.050980397, g: 0.20392159, b: 0.12941177, a: 1}
   - {r: 0.18039216, g: 0.4156863, b: 0.07058824, a: 1}
---- !u!114 &-6811591968530432594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2202566833572084585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696bad16fcc39fc47a3cbd8105de86fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2865048481909255372
 GameObject:
   m_ObjectHideFlags: 0

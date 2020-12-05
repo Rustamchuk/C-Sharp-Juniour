@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ChangerColor : MonoBehaviour
 {
@@ -18,11 +19,11 @@ public class ChangerColor : MonoBehaviour
     {
         if (_renderer.color != _color)
         {
-            _renderer.color = _color;
+            _renderer.DOColor(_color, 0.5f);
         }
         else
         {
-            _renderer.color = _defaultColor;
+            _renderer.DOColor(_defaultColor, 0.5f);
         }
     }
 }

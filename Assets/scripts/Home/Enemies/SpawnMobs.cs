@@ -5,19 +5,20 @@ using Random = System.Random;
 
 public class SpawnMobs : MonoBehaviour
 {
-    [SerializeField] private Transform _mainPoint; 
     [SerializeField] private GameObject _enemy;
-    [SerializeField] private int _time = 2;
+    [SerializeField] private int _spawnPeriod = 2;
 
+    private Transform _fatherPoint;
     private Transform[] _points;
 
     private void Start()
     {
-        _points = new Transform[_mainPoint.childCount];
+        _fatherPoint = GetComponent<Transform>();
+        _points = new Transform[_fatherPoint.childCount];
 
-        for (int i = 0; i < _mainPoint.childCount; i++)
+        for (int i = 0; i < _fatherPoint.childCount; i++)
         {
-            _points[i] = _mainPoint.GetChild(i);
+            _points[i] = _fatherPoint.GetChild(i);
         }
 
 
@@ -26,7 +27,7 @@ public class SpawnMobs : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        WaitForSeconds time = new WaitForSeconds(_time);
+        WaitForSeconds time = new WaitForSeconds(_spawnPeriod);
         Random randi = new Random();
 
         while (true)

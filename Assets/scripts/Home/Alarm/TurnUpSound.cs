@@ -1,35 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class TurnUpSound : MonoBehaviour
 {
     [SerializeField] private AudioSource _sound;
     [SerializeField] private SpriteRenderer _renderer;
-    [SerializeField] private float _volumeAtOneMotion;
 
-    public IEnumerator ChangeVolume()
+    private Color _defaultColor = new Color();
+
+    private void Start()
     {
-        var WaitForSeconds = new WaitForSeconds(2f);
+        _defaultColor = _renderer.color;
+    }
 
-        _sound.volume = _volumeAtOneMotion;
-
-        for (float i = _volumeAtOneMotion; i <= 1; i += _volumeAtOneMotion)
-        {
-            if (_sound.isPlaying == false && _renderer.color == Color.red)
-                _sound.Play();
-
-            _sound.volume += i;
-
-            yield return WaitForSeconds;
-        }
+    public void ChangeVolume()
+    {
+        _sound.volume = 0;
+        _sound.Play();
+        _sound.DOFade(1f, 10f);
     }
 
     public void CheckPlaying()
     {
-        if (_renderer.color != Color.red)
+        if (_renderer.color != _defaultColor)
             _sound.Stop();
         else
-            StartCoroutine(ChangeVolume());
+            ChangeVolume();
     }
 }
