@@ -5,13 +5,13 @@ using UnityEngine.Events;
 
 public class Signal : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _signalize;
+    [SerializeField] private UnityEvent _robberAtHome;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
-            _signalize?.Invoke();
+            _robberAtHome?.Invoke();
         }
     }
 }
